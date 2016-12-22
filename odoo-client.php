@@ -37,5 +37,35 @@ class odoo_client {
             )
         );
     }
+
+    function sign_up(){
+        $common = ripcord::client("$this->url/xmlrpc/2/common");
+        $this->uid = $common->authenticate($this->db, $this->username, $this->password, array());
+
+        $models = ripcord::client("$this->url/xmlrpc/2/object");
+        $car = $models->execute_kw($this->db, $this->uid, $this->password,
+            'doqar.car_owner', 'sign_up',
+            array(
+                false,
+                $_REQUEST
+            )
+        );
+
+        if ($car['faultCode'] != 0){
+            $return = array(
+                'success'=> false,
+                'message'=> $car['faultString'],
+            );
+
+        } else {
+            $return = array(
+                'success'=> true,
+                'car'=> 'car owner created',
+            );
+        }
+
+        echo json_encode($return);
+
+    }
 }
 

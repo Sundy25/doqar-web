@@ -618,8 +618,7 @@ header {
   transition: all 0.9s ease 0s;
   width: 100%;
 }
-.vedio_content {
-  background: #000 none repeat scroll 0 0;
+.vedio_content { 
   margin-top: -5px;
   padding-bottom: 15px;
   padding-top: 20px;
@@ -921,7 +920,7 @@ button.close {
   margin-top: 0;
 }
 .car_werner_login > p {
-  color: #ff6060;
+  color: #909db9;
   font-size: 20px;
   line-height: 1.2;
   padding-bottom: 12px;
@@ -937,11 +936,12 @@ button.close {
   background-image: url("img/m.png");
   background-position: 96% center;
   background-repeat: no-repeat;
-  border: 1px solid #223c74;
+  border: 1px solid #909db9;
   border-radius: 8px;
-  color: #d13232;
+  color: #909db9;
   font-size: 24px;
   line-height: 1;
+  margin-bottom: 11px !important;
   margin-left: 2%;
   margin-right: 3%;
   padding: 6px 10px;
@@ -1070,7 +1070,7 @@ button.close {
 }
 
 #how_work .modal.fade.in {
-  background: #000 none repeat scroll 0 0;
+  background: rgba(0, 0, 0, 0.85) none repeat scroll 0 0;
 }
 #vedio2 {
   text-align: right;
@@ -1295,4 +1295,380 @@ button.close {
 }
 .modal-backdrop { 
   z-index: 0;
+}
+.signup_process { 
+  display: block;
+}
+
+#mobile_signuup { 
+  display: none!important;
+  text-align: center;
+  
+} 
+.signup_process.images {
+  display: block !important;
+}
+.owl-pagination{}
+.owl-pagination .owl-page{
+  display: inline;
+}
+.owl-pagination .owl-page.active .owl-numbers {
+  background: rgba(29,71,137, 0.75) none repeat scroll 0 0;
+}
+.owl-pagination .owl-page .owl-numbers {
+  background: rgba(0,0,0, 0.15) none repeat scroll 0 0;
+  border-radius: 15px;
+  box-shadow: 0 1px 1px #000 inset;
+  display: inline-block;
+  font-size: 0;
+  height: 13px;
+  margin: 10px 5px;
+  overflow: hidden;
+  width: 13px;
+}
+.sidenav {
+  background: #191919 none repeat scroll 0 0;
+  border-bottom: 1px solid #ccc;
+  border-left: 1px solid #ccc;
+  height: 100%;
+  overflow-x: hidden;
+  padding-top: 60px;
+  position: fixed;
+  right: 0;
+  top: 0;
+  transition: all 0.5s ease 0s;
+  width: 0;
+  z-index: 1;
+}
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s
+}
+
+.sidenav a:hover, .offcanvas a:focus{
+    color: #f1f1f1;
+}
+.sidenav .closebtn {
+  font-size: 55px;
+  line-height: 1;
+  margin-left: 50px;
+  padding: 0;
+  position: absolute;
+  right: 25px;
+  top: 0;
+}
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+ 
+.open_buttn{
+  display: none;
+}
+.open_buttn_area {
+  display: block;
+  left: 0;
+  overflow: hidden;
+  position: absolute;
+  text-align: right;
+  top: -34px;
+  width: 300px;
+}
+.progile_pc {
+  border-radius: 500px;
+  display: block;
+  height: 155px;
+  margin: 0 auto;
+  overflow: hidden;
+  width: 155px;
+}
+.progile_pc > img {
+  border-radius: 100%;
+  width: 100%;
+}
+.blue_bg {
+  background: #335a95 none repeat scroll 0 0;
+}
+.white_bg {
+  background: #fff none repeat scroll 0 0;
+}
+
+.blue_bg ul li a {
+  color: #fff;
+  font-size: 16px;
+  text-transform: uppercase;
+}
+.white_bg ul li a:hover{
+  color: #335a95;
+}
+.white_bg ul li a {
+  color: #335a95;
+  font-size: 16px;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+.blue_bg li {
+  border-bottom: 1px solid #fff;
+}
+.white_bg li {
+  border-bottom: 1px solid #335a95;
+}
+.login_text li {
+  color: #335a95;
+  display: inline-block;
+  font-size: 20px;
+  font-weight: 500;
+  padding: 10px;
+  text-align: center;
+  text-transform: uppercase;
+}
+.[login_text] {
+  display: block;
+  overflow: hidden;
+  text-align: center;
+}
+.profile_iamge > p {
+  color: #fff;
+  float: left;
+  font-weight: 700;
+  margin-bottom: 10px;
+  text-align: right;
+  width: 62%;
+}
+.profile_iamge > a {
+  display: inline-block;
+  float: left;
+  line-height: 1;
+  margin-top: 0;
+  padding: 0 7% 0 0;
+  text-align: right;
+  width: 38%;
+}
+.profile_iamge img {
+  margin-top: -5px;
+  width: 23px;
+}
+.login_text {
+  text-align: center;
+}
+.owl-pagination {
+  padding-right: 10%;
+}
+#approx::before {
+  background: #ff9900 none repeat scroll 0 0;
+  content: "";
+  height: 3px;
+  left: 20%;
+  position: absolute;
+  top: 133px;
+  width: 295px;
+}
+#approx {
+  position: relative;
+}
+
+
+.signup_form {
+  border: 1px solid #1d4789;
+  overflow: hidden;
+  padding: 0 8px;
+  width: 100%;
+}
+.signup_form > h2 {
+  border-bottom: 1px solid #1d4789;
+  color: #909db9;
+  font-size: 36px;
+  line-height: 1.2;
+  padding-bottom: 15px;
+  padding-top: 20px;
+  text-align: center;
+  text-transform: uppercase;
+}
+.signup_form > p {
+  color: #909db9;
+  font-size: 20px;
+  line-height: 1.2;
+  padding-bottom: 12px;
+  padding-top: 15px;
+  text-align: center;
+}
+.page_one,.page_tow,.page_three{
+  padding: 10px;
+}
+.single_input {
+  float: left;
+  margin-right: 2%;
+  width: 49%;
+  overflow: hidden;
+}
+.single_input.no_margin {
+  margin-right: 0;
+}
+.single_input_group {
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+.single_input_group input, .single_input_group select {
+  border: 1px solid #909db9;
+  border-radius: 8px;
+  color: #909db9;
+  font-size: 22px;
+  line-height: 1;
+  padding: 5px 10px;
+  text-transform: uppercase;
+  width: 100%;
+}
+.single_input_group input#bg{
+  background-image: url("img/m.png");
+  background-position: 96% center;
+  background-repeat: no-repeat; 
+}
+.single_radio > input[type="radio"] {
+  float: left;
+  margin-left: 7%;
+  margin-top: 12px;
+  width: 7%;
+}
+ #car_owner_signup {
+  z-index: 21474836;
+}
+.single_radio {
+  float: left;
+  width: 50%;
+}
+.single_radio > h3 {
+  color: #1e4789;
+  float: left;
+  font-size: 20px;
+  padding-left: 5%;
+  width: 83%;
+  margin-top: 6px;
+}
+.single_input_group select {
+  background-image: url("img/tik.png");
+  background-position: 97% 1px;
+  background-repeat: no-repeat;
+  background-size: 44px 94%;
+  overflow: hidden;
+  width: 103%;
+  z-index: 99999;
+}
+option {
+  border-right: 2px solid #b2b2b2;
+  overflow: hidden;
+  width: 97%;
+}
+.single_input > select {
+  background-position: 94% center;
+  width: 106%;
+}
+.single_input.no_margin option {
+  overflow: hidden;
+  width: 94%;
+}
+.single_input > select {
+  background-position: 94% center;
+  border-right: medium none;
+  width: 106%;
+}
+.single_input input {
+  padding: 8px;
+}
+.single_input p {
+  color: #909db9;
+  font-size: 18px;
+  font-style: italic;
+  margin-top: 5px;
+}
+.single_checkbox a {
+  color: #428bca;
+  text-decoration: none;
+}
+.single_checkbox > p {
+  color: #1d4688;
+  font-size: 21px;
+  line-height: 1.1;
+  margin-bottom: 15px;
+  margin-top: 5px;
+}
+.single_checkbox > p {
+  float: left;
+  width: 93%;
+}
+.single_input_group h1 {
+  color: #a4a4a4;
+  font-size: 25px;
+  margin-bottom: 5px;
+  margin-top: -4px;
+  text-transform: uppercase;
+}
+.checkbox_area {
+  display: block;
+  overflow: hidden;
+  padding-bottom: 15px;
+}
+.page_number {
+  float: left;
+  width: 25%;
+}
+.next_button {
+  float: left;
+  width: 75%;
+}
+.page_number > p{
+  color: #1e4789;
+  font-size: 22px;
+  line-height: 1.2; 
+}
+.page_number_button {
+  display: block;
+  overflow: hidden;
+  padding-bottom: 15px;
+  width: 100%;
+}
+.next_button > ul {
+  text-align: right;
+}
+.next_button ul li {
+  background: #1e4789 none repeat scroll 0 0;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 20px;
+  margin-left: 5px;
+  padding: 5px 40px;
+  text-transform: uppercase;
+}
+.single_checkbox > input {
+  float: left;
+  margin-top: 13px;
+  width: 7%;
+}
+.next_button input[type="submit"] {
+  background: transparent none repeat scroll 0 0;
+  border: medium none;
+  color: #fff;
+  padding: 0;
+  text-transform: uppercase;
+  font-size: 20px;
+}
+.page_tow.page2{
+  display: block;
+}
+.page_three.page2{
+  display: block;
+}
+.hidden{
+  display: none;
+}
+.page_tow{
+  display: none;
+}
+.page_three{
+  display: none;
 }

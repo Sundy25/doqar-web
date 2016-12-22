@@ -2,6 +2,17 @@
  * Created by akhmaddanielsembiring on 12/21/16.
  */
 
+jQuery.ajaxSetup({
+    beforeSend: function() {
+        $('#loader').show();
+    },
+    complete: function(){
+        $('#loader').hide();
+    },
+    success: function() {}
+});
+
+
 $( "#login_form" ).submit(function( event ) {
     $('#login_error').html("");
     robot = $("#login_form input[name=robot]:checked").val();
@@ -90,5 +101,36 @@ $('#contact_form').submit(function(event){
         }
     });
 
+    event.preventDefault();
+});
+
+
+$( "#sign_up_form" ).submit(function( event ) {
+
+    $('#sign_up_error').html("");
+    check1 = $("#sign_up_form input[name=check1]:checked").val();
+    check2 = $("#sign_up_form input[name=check2]:checked").val();
+    if (!check1 || !check2){
+        $('#sign_up_error').html("Make sure you agree our terms and conditions").show();
+        return false;
+    }
+
+    $.ajax({
+        type: "POST",
+        url: "odoo-client.php?action=sign_up",
+        data: $("#sign_up_form").serialize(), // serializes the form's elements.
+        dataType: 'json',
+        success: function(data)
+        {
+            if (data.success){
+                $('#car_owner_signup').modal('toggle');
+                $('#sign_up_error').html("");
+                alert('Registration Succeeded. Please check your email. Thank You!');
+            } else {
+                $('#sign_up_error').html("Something wrong! Please try again").show();
+                alert(data.message);
+            }
+        }
+    });
     event.preventDefault();
 });

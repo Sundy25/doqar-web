@@ -11,7 +11,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-		<link href="http://allfont.net/allfont.css?fonts=arial-narrow" rel="stylesheet" type="text/css" />
+		 <link href="http://allfont.net/allfont.css?fonts=arial-narrow" rel="stylesheet" type="text/css" />
         <link href="https://fonts.googleapis.com/css?family=Arimo" rel="stylesheet">
         <link rel="stylesheet" href="css/slicknav.css">
         <link rel="stylesheet" href="css/normalize.css">
@@ -32,6 +32,9 @@
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
 
+
+        <div id='loader'><img src="spinner.gif"/></div>
+
         <header class="header_area">
             <div class="container">
                 <div class="row">
@@ -39,18 +42,48 @@
                         <div class="logo">
                             <img src="img/logo.png" alt="">
                         </div>
-                        <div class="mobile_menu">
-                            <ul id="nav">
-                                <li><a href="#how_work">How It Works</a></li>
-                                <li><a href="#earning">Earnings</a></li>
-                                <li><a href="#step">3 Steps</a></li>
-                                <li><a href="#contact">Contact Us</a></li>
-                                <li><a href="">FAQ</a></li>                                 
-                                <li><a >Login:</a></li>
-                                <li><a id="owerner" data-toggle="modal" data-target="#login" href="">Car Owner</a></li>
-                                <li><a id="adviserss" data-toggle="modal" data-target="#adviser" href="">Advertiser</a></li> 
-                            </ul>
-                        </div>           
+                        <div class="open_buttn_area">
+                            <div class="open_buttn">
+                                <span style="font-size:26px;color:#1d4789 ;cursor:pointer" onclick="openNav()">MENU &#9776;</span>
+                            </div>
+                        </div>
+                        <div class="onley_mobile">
+                            <div id="mySidenav" class="sidenav"> 
+                                    <div class="black_bg">                                        
+                                        <div  class="buttonsss"><a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a></div>
+                                        <div class="profile_iamge">
+                                            <p>LOGOUT</p>
+                                            <a href=""><img src="img/arr.png"></a>
+                                        </div>
+                                        <div class="progile_pc">
+                                            <img src="img/login.png" alt="">
+                                        </div>
+                                        <div class="login_text">                                            
+                                            <ul>
+                                                <li>username</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="blue_bg">
+                                        <ul>    
+                                            <li><a href="#how_work">How It Works</a></li>
+                                            <li><a href="#earning">Earnings</a></li>
+                                            <li><a href="#step">3 Steps</a></li>
+                                            <li><a href="#contact">Contact Us</a></li>
+                                            <li><a href="">FAQ</a></li> 
+                                        </ul>
+                                    </div>
+                                    <div class="white_bg">
+                                        <ul> 
+                                            <li><a href="">Terms of Use</a></li>  
+                                            <li><a href="">Disclaimer</a></li>  
+                                            <li><a href="">Privacy Policy</a></li>  
+                                        </ul>
+                                    </div>                                                                        
+                            </div>  
+                        </div>        
+                            
+                        </div>  
                         <div class="main_menu">
                             <ul id="nav" class="navs">
                                 <li><a href="#how_work">How It Works</a></li>
@@ -62,9 +95,8 @@
                         </div>                                
                         <div class="login_menu">
                             <ul id="nav">
-                                <li><a >Login:</a></li>
-                                <li><a id="owerner" data-toggle="modal" data-target="#login" href="">Car Owner</a></li>
-                                <li><a id="adviserss" data-toggle="modal" data-target="#adviser" href="">Advertiser</a></li> 
+                                <li><a>Sign Up:</a><a id="owerner" data-toggle="modal" data-target="#car_owner_signup" href="">Car Owner</a></li>
+                                <li>|<a >Login:</a><a id="adviserss" data-toggle="modal" data-target="#adviser" href="">Advertiser</a></li>
                             </ul>
                         </div>
                     </div>
@@ -93,6 +125,230 @@
         <section class="popup_area">
             <div class="container">
                 <div class="row">
+
+                    <div class="hidden_block car_login">
+                        <div class="modal fade" id="car_owner_signup" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                          <div class="modal-dialog modal-content"> 
+                              <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                  <span aria-hidden="true">close &times;</span>
+                                </button> 
+                                <div class="signup_form">
+                                    <h2>Car Owner Sign up</h2>
+                                    <p id="sign_up_error"></p>
+                                    <form action="signup.php" method="post" id="sign_up_form">
+                                        <div class="page_one">
+                                            <div class="single_input_group">
+                                                <div class="single_input">
+                                                    <input type="text" name="name" placeholder="name">
+                                                </div>
+                                                <div class="single_input no_margin">
+                                                    <div class="single_radio">
+                                                        <input type="radio" name="gender" value="m"><h3>Laki-laki</h3>
+                                                    </div>
+                                                    <div class="single_radio no_margin">
+                                                        <input type="radio" name="gender" value="f"><h3>Perempuan</h3>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="single_input_group">
+                                                <div class="single_input">
+                                                    <input id="bg" type="text" name="dob" placeholder="tanggal lahir">
+                                                </div>
+                                                <div class="single_input no_margin">
+                                                    <input type="text" name="mobile" placeholder="handphone">
+                                                </div>
+                                            </div>
+                                            <div class="single_input_group">
+                                                <select id="ride_sharing_ids" name="ride_sharing_ids" multiple>
+                                                    <option value="">MEMBER RIDE SHARING</option>
+                                                    <option value="GO-CAR">GO-CAR</option>
+                                                    <option value="GRAB">GRAB</option>
+                                                    <option value="UBER">UBER</option>
+                                                </select>
+                                                <div class="select"></div>
+                                            </div>
+                                            <div class="single_input_group">
+                                                <div class="single_input">
+                                                    <input type="email" name="email" placeholder="email address">
+                                                </div>
+                                                <div class="single_input no_margin">
+                                                    <input type="email" name="email1" placeholder="email address*"> 
+                                                </div>
+                                            </div>
+                                            <div class="single_input_group">
+                                                <select name="member" id="info_source_ids" name="info_source_ids">
+                                                    <option value="">DARIMANA TAHU TENTANG DOQAR</option>
+                                                    <option value="GOOGLE">GOOGLE</option> 
+                                                    <option value="YOUTUBE">YOUTUBE</option> 
+                                                    <option value="FB">FB</option> 
+                                                    <option value="TWITTER">TWITTER</option> 
+                                                </select>
+                                                <div class="select"></div>
+                                            </div>
+                                            <div class="page_number_button">
+                                                <div class="page_number">
+                                                    <p>Page 1/3</p>
+                                                </div>
+                                                <div class="next_button">
+                                                    <ul>
+                                                        <li id="pone" class="next1">next</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <div class="page_tow">
+                                            <div class="single_input_group">
+                                                <div class="single_input">
+                                                    <input type="text" name="stkn_name" placeholder="nama di STNK">
+                                                    <p>Sesuar dengan STNK</p>
+                                                </div>
+                                                <div class="single_input no_margin">
+                                                    <select name="vehicle_make_id" id="vehicle_make_id" name="vehicle_make_id">
+                                                        <option value="">MERK</option>
+                                                        <option value="HONDA">HONDA</option>
+                                                        <option value="TOYOTA">TOYOTA</option>
+                                                        <option value="SUZUKI">SUZUKI</option> 
+                                                    </select> 
+                                                    <div class="select"></div>
+                                                    <p>Merk mobil anda </p>
+                                                </div>
+                                            </div>
+                                            <div class="single_input_group">
+                                                <div class="single_input">
+                                                    <select name="mark" id="vehicle_model_id" name="vehicle_model_id">
+                                                        <option value="">MODEL</option>
+                                                        <option value="ALPHARD">ALPHARD</option>
+                                                        <option value="BRIO">BRIO</option> 
+                                                    </select>
+                                                    <div class="select"></div> 
+                                                    <p>Model mobil anda</p>
+                                                </div>
+                                                <div class="single_input no_margin">
+                                                    <select name="mark" id="vehicle_year" name="vehicle_year">
+                                                        <option value="">TAHUN</option>
+                                                        <option value="2008">2008</option>
+                                                        <option value="2009">2009</option>
+                                                        <option value="2010">2010</option> 
+                                                    </select> 
+                                                    <div class="select"></div>
+                                                    <p>Tahun pembuatan</p>
+                                                </div>
+                                            </div>
+                                            <div class="single_input_group">
+                                                <div class="single_input">
+                                                    <select name="mark" id="vehicle_color_id" nam="vehicle_color_id">
+                                                        <option value="">WARNA</option>
+                                                        <option value="BIRU">BIRU</option>
+                                                        <option value="HITAM">HITAM</option>
+                                                        <option value="MERAH">MERAH</option> 
+                                                    </select> 
+                                                    <div class="select"></div>
+                                                </div>
+                                                <div class="single_input no_margin">
+                                                    <select name="mark" id="is_cat_orisinil" name="is_cat_orisinil">
+                                                        <option value="">CAT ORISINIL</option>
+                                                        <option value="YA ">YA </option>
+                                                        <option value="TIDAK">TIDAK</option> 
+                                                    </select>
+                                                    <div class="select"></div> 
+                                                    <p>Apakah cat masih orisinil   </p>
+                                                </div>
+                                            </div>
+                                            <div class="single_input_group">
+                                                <div class="single_input">
+                                                    <select name="mark" id="is_dempulan" name="is_dempulan">
+                                                        <option value="">ADA DEMPULAN</option>
+                                                        <option value="YA ">YA </option>
+                                                        <option value="TIDAK">TIDAK</option> 
+                                                    </select>
+                                                    <div class="select"></div> 
+                                                    <p>Apakah bodi mobil ada dempulan ?</p>
+                                                </div>
+                                                <div class="single_input no_margin"> 
+                                                    <input type="text" name="plate_no" placeholder="nomor plat">
+                                                </div>
+                                            </div>                                            
+                                            <div class="page_number_button">
+                                                <div class="page_number">
+                                                    <p>Page 2/3</p>
+                                                </div>
+                                                <div class="next_button">
+                                                    <ul>
+                                                        <li id="backb" class="next back">Back</li>
+                                                        <li id="nextb" class="next next1">next</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="page_three">
+                                            <div class="single_input_group">                                                
+                                                <h1>ruman</h1>
+                                                <div id="small_put" class="single_input">
+                                                    <input type="text" name="zip" placeholder="kode pos">
+                                                </div>
+                                                <div id="big_put" class="single_input no_margin">
+                                                    <input type="text" name="home_landmark" placeholder="ALAMAT">
+                                                    <p>Almat lengkap rumah (optional)</p>
+                                                </div>
+                                            </div>  
+                                            <div class="single_input_group">
+                                                <h1>TEMPAT YANG SERING DINKUNJUNGI</h1>
+                                                <div id="small_put" class="single_input"> 
+                                                    <input type="text" name="office_zip" placeholder="kode pos">
+                                                </div>
+                                                <div id="big_put" class="single_input no_margin">
+                                                    <input type="text" name="office_landmark" placeholder="ALAMAT">
+                                                   <p>Almat lengkap</p>
+                                                </div>
+                                            </div> 
+
+                                            <div class="single_input_group"> 
+                                                <div id="" class="single_input"> 
+                                                    <input type="password" name="password" placeholder="password"> 
+                                                </div>
+                                                <div id="" class="single_input no_margin">
+                                                    <input type="password" name="password1" placeholder="password">
+                                                    <p>Password sekali lagi</p>
+                                                </div>
+                                            </div> 
+                                            <div class="checkbox_area">
+                                                <div class="single_checkbox">                                                    
+                                                    <input type="checkbox" name="check1" id="">
+                                                    <p>Saya setuju bahwa hubungan hukum antara saya dan doQar adalah hubungan kerjasama, bukan hubungan ketenagakerjaan.</p>
+                                                </div>
+                                                <div class="single_checkbox">                                                    
+                                                    <input type="checkbox" name="check2" id="">
+                                                    <p>Saya telah membaca dan menyetujui <a href="">Terms of service Use</a>, <a href="">Terms & Conditions</a>, <a href="">Privacy Policy</a> dan <a href="">Disclaimer</a> DoQar.</p>
+                                                </div>
+                                            </div>
+                                            <div class="page_number_button">
+                                                <div class="page_number">
+                                                    <p>Page 3/3</p>
+                                                </div>
+                                                <div class="next_button">
+                                                    <ul>
+                                                        <li id="backl" class="next1">back</li>
+                                                        <li><input type="submit" value="Sign up"></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+
+
+
+                                        </div>
+
+
+                                    </form>
+                                </div>
+                              </div>
+
+                          </div>
+                        </div>                        
+                    </div>
+
+
                     <div class="hidden_block car_login">
                         <div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                           <div class="modal-dialog modal-content"> 
@@ -102,8 +358,10 @@
                                 </button> 
                                 <div class="car_werner_login">
                                     <h2>Car Owner Login</h2>
+
                                     <p id="login_error"></p>
-                                    <form action="login.php" method="POST" id="login_form">
+
+                                    <form action="login.php" method="post" id="login_form">
                                         <input type="email" name="email" placeholder="Email Address">
                                         <input class="no_margin" type="password" name="password" placeholder="Password">
                                         <div class="submit_area common_form">
@@ -118,7 +376,7 @@
                                         <div class="login_meusss">
                                             <ul>
                                                 <li><p>Not a member yet?</p></li>
-                                                <li><a href="">Sign Up!</a></li>
+                                                <li><a data-toggle="modal" data-target="#car_owner_signup" id="get_pass" href="">Sign Up!</a></li>
                                                 <li><a data-toggle="modal" data-target="#password" id="get_pass" href="">Forgot Your Password?</a></li>
                                             </ul>
                                             <h3>or</h3>
@@ -133,6 +391,10 @@
                           </div>
                         </div>                        
                     </div>
+
+
+
+
                     <div class="hidden_blocka car_login">
                         <div class="modal fade" id="adviser" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                           <div class="modal-dialog modal-content"> 
@@ -145,6 +407,7 @@
 
                                     <p id="ads_login_error"></p>
 
+                                    <p>Please log into your account.</p>
                                     <form action="adlogin.php" method="post" id="ads_login_form">
                                         <input type="email" name="email" placeholder="Email Address">
                                         <input class="no_margin" type="password" name="password" placeholder="Password">
@@ -179,8 +442,8 @@
                                 </button> 
                                 <div class="car_werner_login adviser_login forget">
                                     <h2>Forgot Your Password?</h2>
-                                    <p>Please provide your email address for your new password.</p>
-                                    <form action="adlogin.php" method="post">
+                                    <p id="forgot_password_error"></p>
+                                    <form action="adlogin.php" method="post" id="forgot_password_form">
                                         <input type="email" name="email" placeholder="Email Address"> 
                                         <div class="submit_area common_form">
                                             <div class="robot_area login_radio">
@@ -345,7 +608,7 @@
                             </div> 
 
                             <div class="car_price_area">
-                                <div id="approx"><span>IDR </span><span id="calculator-low"></span> <span>K</span> - <span id="calculator-high"></span>K*</div>
+                                <div id="approx"><span>IDR </span><span id="calculator-low"></span> <span>K</span><br> <span id="calculator-high"></span>K*</div>
                                 <div class="months">* Monthly Approximation</div> 
                             </div>  
 
@@ -360,7 +623,8 @@
         <section id="step" class="three_steap_process">
             <div class="container">
                 <div class="row">
-                    <div class="signup_process">
+                    <div class="top_level">                    
+                    <div class="signup_process">                    
                         <div class="single_single_up">
                             <img src="img/icon1.png">
                             <h3>Sign Up</h3>
@@ -377,9 +641,30 @@
                             <h3>Select Campaign</h3>
                             <p>and start your <span>earnings</span> with doQar.</p> 
                         </div> 
-
-                        <img src="img/carb1.png">
-                    </div>
+                        </div> 
+                        <div id="mobile_signuup" class="">                    
+                            <div class="single_single_up">
+                                <img src="img/icon1.png">
+                                <h3>Sign Up</h3>
+                                <p>Download the <span>App for Android</span> and create an account</p>
+                                <img class="google" src="img/google1.png">
+                            </div> 
+                            <div class="single_single_up">
+                                <img src="img/icon2.png">
+                                <h3>Qualify</h3>
+                                <p>Drive with the App and meet  <span>the minimum qualifications.</span> </p> 
+                            </div> 
+                            <div class="single_single_up">
+                                <img src="img/icon3.png">
+                                <h3>Select Campaign</h3>
+                                <p>and start your <span>earnings</span> with doQar.</p> 
+                            </div>  
+                        </div>
+                        <div class="signup_process images">                            
+                            <img src="img/carb1.png">
+                        </div>
+                    </div> 
+ 
                 </div>
             </div>
         </section>
@@ -394,10 +679,7 @@
                        </div>  
                        <div class="col-md-7 col-xs-12 col-sm-7">   
                             <div class="contact_form">
-
-                                <p id="contact_error"></p>
-
-                                <form action="#" method="POST" id="contact_form">
+                                <form action="#" method="POST">
                                     <input type="radio" name="one" id="car1" onchange="update()"><p>I’m a Car Owner </p>
                                     <input type="radio" name="one" id="car2" onchange="update()" checked><p>I’m an Advertiser</p>
                                     <input type="radio" name="one" id="other" onchange="update()"><p>Others</p>
@@ -526,96 +808,104 @@
         <script src="js/ion.rangeSlider.min.js"></script>
         <script src="js/main.js"></script>
 
-        <script>
-         var Wrapify = Wrapify || {};
+          <script>
+             var Wrapify = Wrapify || {};
 
-         (function() {
+             (function() {
 
-           Wrapify.Calculator = function($, id) {
-             var self = this;
+               Wrapify.Calculator = function($, id) {
+                 var self = this;
 
-             var $el = $(id);
-             var $commuteCtrl = $el.find("#calculator-commute");
-             var $commuteTooltip = $('<div id="tester" class="calculator-control-tooltip calculator-control-tooltip-commute"></div>');
-             var $coverageCtrl = $el.find("#custom-handle-wrap");
-             var $coverageTooltip = $('<div class="calculator-control-tooltip calculator-control-tooltip-coverage"></div>');
-             var $low = $el.find("#calculator-low");
-             var $high = $el.find("#calculator-high");
+                 var $el = $(id);
+                 var $commuteCtrl = $el.find("#calculator-commute");
+                 var $commuteTooltip = $('<div id="tester" class="calculator-control-tooltip calculator-control-tooltip-commute"></div>');
+                 var $coverageCtrl = $el.find("#custom-handle-wrap");
+                 var $coverageTooltip = $('<div class="calculator-control-tooltip calculator-control-tooltip-coverage"></div>');
+                 var $low = $el.find("#calculator-low");
+                 var $high = $el.find("#calculator-high");
 
-             this.commute = 25;
-             this.coverage = 0;
+                 this.commute = 25;
+                 this.coverage = 0;
 
-             this.low = null;
-             this.high = null;
+                 this.low = null;
+                 this.high = null;
 
-             function calculate() {
-              var km = $("#calculator-commute").slider("value");
-              var min_days  = 8;
-              var max_days  = 22;
-              var min_avg_price  = 58.33;
-              var max_avg_price  = 91.67;
-              var price_gap = 16.67;
-              var coverageScale = [0.33, 0.75, 1.0];
-              self.low =  (km * (min_avg_price + (price_gap * coverageScale[self.coverage])) * min_days);
-              self.high = (km * (max_avg_price + (price_gap * coverageScale[self.coverage])) * max_days);
+                 function calculate() {
+                  var km = $("#calculator-commute").slider("value");
+                  var min_days  = 8;
+                  var max_days  = 22;
+                  var min_avg_price  = 58.33;
+                  var max_avg_price  = 91.67;
+                  var price_gap = 16.67;
+                  var coverageScale = [0.33, 0.75, 1.0];
+                  self.low =  (km * (min_avg_price + (price_gap * coverageScale[self.coverage])) * min_days);
+                  self.high = (km * (max_avg_price + (price_gap * coverageScale[self.coverage])) * max_days);
 
-             }
+                 }
 
-             function update() {
-               var coverageText = [
-                 "Panel",
-                 "Partial",
-                 "Full"
-               ];
+                 function update() {
+                   var coverageText = [
+                     "Panel",
+                     "Partial",
+                     "Full"
+                   ];
 
-               calculate();
+                   calculate();
 
-               $commuteTooltip.html(self.commute);
-               $coverageTooltip.html(coverageText[self.coverage]);
+                   $commuteTooltip.html(self.commute);
+                   $coverageTooltip.html(coverageText[self.coverage]);
 
-               $low.html(Math.round(self.low));
-               $high.html(Math.round(self.high));
-             }
+                   $low.html(Math.round(self.low));
+                   $high.html(Math.round(self.high));
+                 }
 
-             $commuteCtrl.slider({
-               min: 0,
-               max: 100,
-               step: 1,
-               value: self.commute,
-               create: function(event, ui) {
-                 $(event.target).find('.ui-slider-handle').append($commuteTooltip);
-               },
-               slide: function(event, ui) {
-                 self.commute = parseInt(ui.value);
+                 $commuteCtrl.slider({
+                   min: 0,
+                   max: 100,
+                   step: 1,
+                   value: self.commute,
+                   create: function(event, ui) {
+                     $(event.target).find('.ui-slider-handle').append($commuteTooltip);
+                   },
+                   slide: function(event, ui) {
+                     self.commute = parseInt(ui.value);
+                     update();
+                   }
+                 });
+
+                 $coverageCtrl.slider({
+                   min: 0,
+                   max: 2,
+                   step: 1,
+                   value: self.coverage,
+                   create: function(event, ui) {
+                     $(event.target).find('.ui-slider-handle').append($coverageTooltip);
+                   },
+                   slide: function(event, ui) {
+                     self.coverage = parseInt(ui.value);
+                     update();
+                   }
+                 });
+
                  update();
-               }
+               };
+
+             })();
+
+             jQuery(function() {
+               window.calculator = new Wrapify.Calculator(jQuery, "#calculator");
              });
+          </script>
+          <script>
+            function openNav() {
+                document.getElementById("mySidenav").style.width = "250px";
+            }
 
-             $coverageCtrl.slider({
-               min: 0,
-               max: 2,
-               step: 1,
-               value: self.coverage,
-               create: function(event, ui) {
-                 $(event.target).find('.ui-slider-handle').append($coverageTooltip);
-               },
-               slide: function(event, ui) {
-                 self.coverage = parseInt(ui.value);
-                 update();
-               }
-             });
-
-             update();
-           };
-
-         })();
-
-         jQuery(function() {
-           window.calculator = new Wrapify.Calculator(jQuery, "#calculator");
-         });
+            function closeNav() {
+                document.getElementById("mySidenav").style.width = "0";
+            }
         </script>
-
         <script src="js/odoo-client.js"></script>
-
+        <script src="https://cdn.jsdelivr.net/jquery.loadingoverlay/latest/loadingoverlay_progress.min.js"></script>
     </body>
 </html>
