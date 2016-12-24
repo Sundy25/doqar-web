@@ -11,7 +11,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-		 <link href="http://allfont.net/allfont.css?fonts=arial-narrow" rel="stylesheet" type="text/css" />
+         <link href="http://allfont.net/allfont.css?fonts=arial-narrow" rel="stylesheet" type="text/css" />
         <link href="https://fonts.googleapis.com/css?family=Arimo" rel="stylesheet">
         <link rel="stylesheet" href="css/slicknav.css">
         <link rel="stylesheet" href="css/normalize.css">
@@ -25,7 +25,7 @@
 
         <link rel="stylesheet" href="css/doqar.css">
 
-		<!--[if IE]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+        <!--[if IE]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
     </head>
     <body>
         <!--[if lt IE 7]>
@@ -153,14 +153,14 @@
                                             </div>
                                             <div class="single_input_group">
                                                 <div class="single_input">
-                                                    <input id="bg" type="text" name="dob" placeholder="tanggal lahir">
+                                                    <input class="bg" type="text" name="dob" id="datepicker" placeholder="tanggal lahir"> 
                                                 </div>
                                                 <div class="single_input no_margin">
                                                     <input type="text" name="mobile" placeholder="handphone">
                                                 </div>
                                             </div>
                                             <div class="single_input_group">
-                                                <select id="ride_sharing_ids" name="ride_sharing_ids" multiple>
+                                                <select id="ride_sharing_ids" name="ride_sharing_ids">
                                                     <option value="">MEMBER RIDE SHARING</option>
                                                     <option value="GO-CAR">GO-CAR</option>
                                                     <option value="GRAB">GRAB</option>
@@ -608,7 +608,7 @@
                             </div> 
 
                             <div class="car_price_area">
-                                <div id="approx"><span>IDR </span><span id="calculator-low"></span> <span>K</span><br> <span id="calculator-high"></span>K*</div>
+                                <div id="approx"><span>IDR </span><span id="calculator-low"></span> <span>K</span> <span class="dash">-</span> <span id="calculator-high"></span>K*</div>
                                 <div class="months">* Monthly Approximation</div> 
                             </div>  
 
@@ -797,7 +797,7 @@
                 </div>
             </div>
         </footer>
-	
+    
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
         <script src="js/bootstrap.min.js"></script>
@@ -896,6 +896,7 @@
                window.calculator = new Wrapify.Calculator(jQuery, "#calculator");
              });
           </script>
+          <!-- slide Menu -->
           <script>
             function openNav() {
                 document.getElementById("mySidenav").style.width = "250px";
@@ -905,6 +906,12 @@
                 document.getElementById("mySidenav").style.width = "0";
             }
         </script>
+        <!-- Jquery Date Picker  -->
+         <script>
+          $( function() {
+            $( "#datepicker" ).datepicker();
+          } );
+          </script>
         <script src="js/odoo-client.js"></script>
         <script src="https://cdn.jsdelivr.net/jquery.loadingoverlay/latest/loadingoverlay_progress.min.js"></script>
     </body>

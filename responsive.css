@@ -739,7 +739,9 @@ button.close {
 #common_margin {
   margin-bottom: 10px;
 }
-
+.dash{
+  display: none;
+}
 
 
 
