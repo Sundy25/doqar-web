@@ -1,3 +1,16 @@
+<?php
+include("ripcord-master/ripcord.php");
+include("odoo-lib.php");
+$odoo_client = new odoo_client();
+$odoo_client->back_login();
+$ride_sharings = $odoo_client->get_ride_sharings();
+$info_sources = $odoo_client->get_info_sources();
+$vehicle_makes = $odoo_client->get_vehicle_makes();
+$vehicle_colors = $odoo_client->get_vehicle_colors();
+$years = range(date("Y")-8, date("Y"));
+?>
+
+
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
@@ -161,9 +174,9 @@
                                             </div>
                                             <div class="single_input_group">
                                                 <select id="ride_sharing_ids" name="ride_sharing_ids" multiple>
-                                                    <option value="4">GO-CAR</option>
-                                                    <option value="5">GRAB</option>
-                                                    <option value="6">UBER</option>
+                                                    <?php foreach ($ride_sharings as $key=>$ride ) :?>
+                                                        <option value="<?php echo $ride['id']?>"><?php echo $ride['name']?></option>
+                                                    <?php endforeach; ?>
                                                 </select>
                                                 <div class="select"></div>
                                             </div>
@@ -177,11 +190,10 @@
                                             </div>
                                             <div class="single_input_group">
                                                 <select name="info_source_ids" id="info_source_ids" name="info_source_ids" multiple>
-                                                    <option value="">DARIMANA TAHU TENTANG DOQAR</option>
-                                                    <option value="4">GOOGLE</option>
-                                                    <option value="5">YOUTUBE</option>
-                                                    <option value="6">FB</option>
-                                                    <option value="7">TWITTER</option>
+                                                    <?php foreach ($info_sources as $key=>$info ) :?>
+                                                        <option value="<?php echo $info['id']?>"><?php echo $info['name']?></option>
+                                                    <?php endforeach; ?>
+
                                                 </select>
                                                 <div class="select"></div>
                                             </div>
@@ -197,40 +209,35 @@
                                             </div>
 
                                         </div>
-                                        <div class="page_tow">
+                                        <div class="page_tow" id="dropdown">
                                             <div class="single_input_group">
                                                 <div class="single_input">
                                                     <input type="text" name="stkn_name" placeholder="nama di STNK">
-                                                    <p>Sesuar dengan STNK</p>
+                                                    <p>Sesuai dengan STNK</p>
                                                 </div>
                                                 <div class="single_input no_margin">
-                                                    <select id="vehicle_model_id" name="vehicle_make_id">
-                                                        <option value="">MERK</option>
-                                                        <option value="HONDA">HONDA/BRIO</option>
-                                                        <option value="TOYOTA">TOYOTA/AVANZA</option>
-                                                        <option value="SUZUKI">SUZUKI/RUSH</option>
-                                                    </select> 
+                                                    <select id="vehicle_make_id" name="vehicle_make_id" class="step1">
+                                                        <?php foreach ($vehicle_makes as $key=>$make ) :?>
+                                                            <option value="<?php echo $make['id']?>"><?php echo $make['name']?></option>
+                                                        <?php endforeach; ?>
+                                                    </select>
                                                     <div class="select"></div>
                                                     <p>Merk mobil anda </p>
                                                 </div>
                                             </div>
                                             <div class="single_input_group">
                                                 <div class="single_input">
-                                                    <select id="vehicle_model_id" name="vehicle_model_id">
-                                                        <option value="">MODEL</option>
-                                                        <option value="1">ALPHARD</option>
-                                                        <option value="2">BRIO</option>
+                                                    <select id="vehicle_model_id" name="vehicle_model_id" class="step2">
                                                     </select>
                                                     <div class="select"></div> 
                                                     <p>Model mobil anda</p>
                                                 </div>
                                                 <div class="single_input no_margin">
                                                     <select id="vehicle_year" name="vehicle_year">
-                                                        <option value="">TAHUN</option>
-                                                        <option value="2008">2008</option>
-                                                        <option value="2009">2009</option>
-                                                        <option value="2010">2010</option> 
-                                                    </select> 
+                                                        <?php foreach ($years as $key=>$year  ) :?>
+                                                            <option value="<?php echo $year?>"><?php echo $year?></option>
+                                                        <?php endforeach; ?>
+                                                    </select>
                                                     <div class="select"></div>
                                                     <p>Tahun pembuatan</p>
                                                 </div>
@@ -238,18 +245,17 @@
                                             <div class="single_input_group">
                                                 <div class="single_input">
                                                     <select id="vehicle_color_id" nam="vehicle_color_id">
-                                                        <option value="">WARNA</option>
-                                                        <option value="1">BIRU</option>
-                                                        <option value="2">HITAM</option>
-                                                        <option value="3">MERAH</option>
+                                                        <?php foreach ($vehicle_colors as $key=>$color  ) :?>
+                                                            <option value="<?php echo $color['id']?>"><?php echo $color['name']?></option>
+                                                        <?php endforeach; ?>
                                                     </select> 
                                                     <div class="select"></div>
                                                 </div>
                                                 <div class="single_input no_margin">
                                                     <select id="is_cat_orisinil" name="is_cat_orisinil">
                                                         <option value="">CAT ORISINIL</option>
-                                                        <option value="1">YA </option>
-                                                        <option value="0">TIDAK</option>
+                                                        <option value="y">YA </option>
+                                                        <option value="n">TIDAK</option>
                                                     </select>
                                                     <div class="select"></div> 
                                                     <p>Apakah cat masih orisinil   </p>
@@ -259,8 +265,8 @@
                                                 <div class="single_input">
                                                     <select id="is_dempulan" name="is_dempulan">
                                                         <option value="">ADA DEMPULAN</option>
-                                                        <option value="1">YA </option>
-                                                        <option value="0">TIDAK</option>
+                                                        <option value="y">YA </option>
+                                                        <option value="n">TIDAK</option>
                                                     </select>
                                                     <div class="select"></div> 
                                                     <p>Apakah bodi mobil ada dempulan ?</p>
@@ -283,7 +289,7 @@
                                         </div>
                                         <div class="page_three">
                                             <div class="single_input_group">                                                
-                                                <h1>ruman</h1>
+                                                <h1>rumah</h1>
                                                 <div id="small_put" class="single_input">
                                                     <input type="text" name="zip" placeholder="kode pos">
                                                 </div>
@@ -299,7 +305,7 @@
                                                 </div>
                                                 <div id="big_put" class="single_input no_margin">
                                                     <input type="text" name="office_landmark" placeholder="ALAMAT">
-                                                   <p>Almat lengkap</p>
+                                                   <p>Alamat lengkap</p>
                                                 </div>
                                             </div> 
 
@@ -911,6 +917,7 @@
             $( "#datepicker" ).datepicker();
           } );
           </script>
+        <script src="js/jquery.cascadingdropdown.min.js"></script>
         <script src="js/odoo-client.js"></script>
         <script src="https://cdn.jsdelivr.net/jquery.loadingoverlay/latest/loadingoverlay_progress.min.js"></script>
     </body>

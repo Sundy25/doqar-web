@@ -134,3 +134,27 @@ $( "#sign_up_form" ).submit(function( event ) {
     });
     event.preventDefault();
 });
+
+$('#dropdown').cascadingDropdown({
+    selectBoxes: [
+        {
+            selector: '.step1'
+        },
+        {
+            selector: '.step2',
+            requires: ['.step1'],
+            source: function(request, response) {
+                $.getJSON('/doqar/doqar-web/odoo-client.php?action=get_vehicle_models', request, function(data) {
+                    var selectOnlyOption = data.length <= 1;
+                    response($.map(data, function(item, index) {
+                        return {
+                            label: item.name,
+                            value: item.id ,
+                            selected: selectOnlyOption // Select if only option
+                        };
+                    }));
+                });
+            }
+        }
+    ]
+});
