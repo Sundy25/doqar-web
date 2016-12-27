@@ -204,11 +204,11 @@
                                                     <p>Sesuar dengan STNK</p>
                                                 </div>
                                                 <div class="single_input no_margin">
-                                                    <select name="vehicle_make_id" id="vehicle_make_id" name="vehicle_make_id">
+                                                    <select id="vehicle_model_id" name="vehicle_make_id">
                                                         <option value="">MERK</option>
-                                                        <option value="HONDA">HONDA</option>
-                                                        <option value="TOYOTA">TOYOTA</option>
-                                                        <option value="SUZUKI">SUZUKI</option> 
+                                                        <option value="HONDA">HONDA/BRIO</option>
+                                                        <option value="TOYOTA">TOYOTA/AVANZA</option>
+                                                        <option value="SUZUKI">SUZUKI/RUSH</option>
                                                     </select> 
                                                     <div class="select"></div>
                                                     <p>Merk mobil anda </p>
@@ -216,7 +216,7 @@
                                             </div>
                                             <div class="single_input_group">
                                                 <div class="single_input">
-                                                    <select name="vehicle_model_id" id="vehicle_model_id" name="vehicle_model_id">
+                                                    <select id="vehicle_model_id" name="vehicle_model_id">
                                                         <option value="">MODEL</option>
                                                         <option value="1">ALPHARD</option>
                                                         <option value="2">BRIO</option>
@@ -225,7 +225,7 @@
                                                     <p>Model mobil anda</p>
                                                 </div>
                                                 <div class="single_input no_margin">
-                                                    <select name="vehicle_year" id="vehicle_year" name="vehicle_year">
+                                                    <select id="vehicle_year" name="vehicle_year">
                                                         <option value="">TAHUN</option>
                                                         <option value="2008">2008</option>
                                                         <option value="2009">2009</option>
@@ -237,7 +237,7 @@
                                             </div>
                                             <div class="single_input_group">
                                                 <div class="single_input">
-                                                    <select name="vehicle_color_id" id="vehicle_color_id" nam="vehicle_color_id">
+                                                    <select id="vehicle_color_id" nam="vehicle_color_id">
                                                         <option value="">WARNA</option>
                                                         <option value="1">BIRU</option>
                                                         <option value="2">HITAM</option>
@@ -246,7 +246,7 @@
                                                     <div class="select"></div>
                                                 </div>
                                                 <div class="single_input no_margin">
-                                                    <select name="is_cat_orisinil" id="is_cat_orisinil" name="is_cat_orisinil">
+                                                    <select id="is_cat_orisinil" name="is_cat_orisinil">
                                                         <option value="">CAT ORISINIL</option>
                                                         <option value="1">YA </option>
                                                         <option value="0">TIDAK</option>
@@ -257,7 +257,7 @@
                                             </div>
                                             <div class="single_input_group">
                                                 <div class="single_input">
-                                                    <select name="is_dempulan" id="is_dempulan" name="is_dempulan">
+                                                    <select id="is_dempulan" name="is_dempulan">
                                                         <option value="">ADA DEMPULAN</option>
                                                         <option value="1">YA </option>
                                                         <option value="0">TIDAK</option>
@@ -293,7 +293,7 @@
                                                 </div>
                                             </div>  
                                             <div class="single_input_group">
-                                                <h1>TEMPAT YANG SERING DINKUNJUNGI</h1>
+                                                <h1>TEMPAT YANG SERING DIKUNJUNGI</h1>
                                                 <div id="small_put" class="single_input"> 
                                                     <input type="text" name="office_zip" placeholder="kode pos">
                                                 </div>
