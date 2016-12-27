@@ -43,6 +43,13 @@ class odoo_client {
         $this->uid = $common->authenticate($this->db, $this->username, $this->password, array());
 
         $models = ripcord::client("$this->url/xmlrpc/2/object");
+
+
+        foreach($_REQUEST['ride_sharing_ids'] as $key=>$rs){
+            $rs_ids[] = array(4,$rs);
+        }
+        $_REQUEST['ride_sharing_ids'] = $rs_ids;
+
         $car = $models->execute_kw($this->db, $this->uid, $this->password,
             'doqar.car_owner', 'sign_up',
             array(

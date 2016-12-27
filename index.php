@@ -160,11 +160,10 @@
                                                 </div>
                                             </div>
                                             <div class="single_input_group">
-                                                <select id="ride_sharing_ids" name="ride_sharing_ids">
-                                                    <option value="">MEMBER RIDE SHARING</option>
-                                                    <option value="GO-CAR">GO-CAR</option>
-                                                    <option value="GRAB">GRAB</option>
-                                                    <option value="UBER">UBER</option>
+                                                <select id="ride_sharing_ids" name="ride_sharing_ids" multiple>
+                                                    <option value="4">GO-CAR</option>
+                                                    <option value="5">GRAB</option>
+                                                    <option value="6">UBER</option>
                                                 </select>
                                                 <div class="select"></div>
                                             </div>
@@ -177,12 +176,12 @@
                                                 </div>
                                             </div>
                                             <div class="single_input_group">
-                                                <select name="member" id="info_source_ids" name="info_source_ids">
+                                                <select name="info_source_ids" id="info_source_ids" name="info_source_ids" multiple>
                                                     <option value="">DARIMANA TAHU TENTANG DOQAR</option>
-                                                    <option value="GOOGLE">GOOGLE</option> 
-                                                    <option value="YOUTUBE">YOUTUBE</option> 
-                                                    <option value="FB">FB</option> 
-                                                    <option value="TWITTER">TWITTER</option> 
+                                                    <option value="4">GOOGLE</option>
+                                                    <option value="5">YOUTUBE</option>
+                                                    <option value="6">FB</option>
+                                                    <option value="7">TWITTER</option>
                                                 </select>
                                                 <div class="select"></div>
                                             </div>
@@ -217,16 +216,16 @@
                                             </div>
                                             <div class="single_input_group">
                                                 <div class="single_input">
-                                                    <select name="mark" id="vehicle_model_id" name="vehicle_model_id">
+                                                    <select name="vehicle_model_id" id="vehicle_model_id" name="vehicle_model_id">
                                                         <option value="">MODEL</option>
-                                                        <option value="ALPHARD">ALPHARD</option>
-                                                        <option value="BRIO">BRIO</option> 
+                                                        <option value="1">ALPHARD</option>
+                                                        <option value="2">BRIO</option>
                                                     </select>
                                                     <div class="select"></div> 
                                                     <p>Model mobil anda</p>
                                                 </div>
                                                 <div class="single_input no_margin">
-                                                    <select name="mark" id="vehicle_year" name="vehicle_year">
+                                                    <select name="vehicle_year" id="vehicle_year" name="vehicle_year">
                                                         <option value="">TAHUN</option>
                                                         <option value="2008">2008</option>
                                                         <option value="2009">2009</option>
@@ -238,19 +237,19 @@
                                             </div>
                                             <div class="single_input_group">
                                                 <div class="single_input">
-                                                    <select name="mark" id="vehicle_color_id" nam="vehicle_color_id">
+                                                    <select name="vehicle_color_id" id="vehicle_color_id" nam="vehicle_color_id">
                                                         <option value="">WARNA</option>
-                                                        <option value="BIRU">BIRU</option>
-                                                        <option value="HITAM">HITAM</option>
-                                                        <option value="MERAH">MERAH</option> 
+                                                        <option value="1">BIRU</option>
+                                                        <option value="2">HITAM</option>
+                                                        <option value="3">MERAH</option>
                                                     </select> 
                                                     <div class="select"></div>
                                                 </div>
                                                 <div class="single_input no_margin">
-                                                    <select name="mark" id="is_cat_orisinil" name="is_cat_orisinil">
+                                                    <select name="is_cat_orisinil" id="is_cat_orisinil" name="is_cat_orisinil">
                                                         <option value="">CAT ORISINIL</option>
-                                                        <option value="YA ">YA </option>
-                                                        <option value="TIDAK">TIDAK</option> 
+                                                        <option value="1">YA </option>
+                                                        <option value="0">TIDAK</option>
                                                     </select>
                                                     <div class="select"></div> 
                                                     <p>Apakah cat masih orisinil   </p>
@@ -258,10 +257,10 @@
                                             </div>
                                             <div class="single_input_group">
                                                 <div class="single_input">
-                                                    <select name="mark" id="is_dempulan" name="is_dempulan">
+                                                    <select name="is_dempulan" id="is_dempulan" name="is_dempulan">
                                                         <option value="">ADA DEMPULAN</option>
-                                                        <option value="YA ">YA </option>
-                                                        <option value="TIDAK">TIDAK</option> 
+                                                        <option value="1">YA </option>
+                                                        <option value="0">TIDAK</option>
                                                     </select>
                                                     <div class="select"></div> 
                                                     <p>Apakah bodi mobil ada dempulan ?</p>
@@ -315,11 +314,11 @@
                                             </div> 
                                             <div class="checkbox_area">
                                                 <div class="single_checkbox">                                                    
-                                                    <input type="checkbox" name="check1" id="">
+                                                    <input type="checkbox" name="check1" id="check1">
                                                     <p>Saya setuju bahwa hubungan hukum antara saya dan doQar adalah hubungan kerjasama, bukan hubungan ketenagakerjaan.</p>
                                                 </div>
                                                 <div class="single_checkbox">                                                    
-                                                    <input type="checkbox" name="check2" id="">
+                                                    <input type="checkbox" name="check2" id="check2">
                                                     <p>Saya telah membaca dan menyetujui <a href="">Terms of service Use</a>, <a href="">Terms & Conditions</a>, <a href="">Privacy Policy</a> dan <a href="">Disclaimer</a> DoQar.</p>
                                                 </div>
                                             </div>
