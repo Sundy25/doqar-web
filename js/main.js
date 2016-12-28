@@ -33,6 +33,10 @@ $(document).ready(function(){
         $(".page_tow").addClass("hidden"); 
     });
 
+    $(".closle_pop p").click(function(){ 
+        $(".footer_modal_area").hide(500); 
+    });
+
 
 
 

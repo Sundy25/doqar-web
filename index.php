@@ -1,13 +1,15 @@
 <?php
-include("ripcord-master/ripcord.php");
-include("odoo-lib.php");
-$odoo_client = new odoo_client();
-$odoo_client->back_login();
-$ride_sharings = $odoo_client->get_ride_sharings();
-$info_sources = $odoo_client->get_info_sources();
-$vehicle_makes = $odoo_client->get_vehicle_makes();
-$vehicle_colors = $odoo_client->get_vehicle_colors();
-$years = range(date("Y")-8, date("Y"));
+
+// include("ripcord-master/ripcord.php");
+// include("odoo-lib.php");
+// $odoo_client = new odoo_client();
+// $odoo_client->back_login();
+// $ride_sharings = $odoo_client->get_ride_sharings();
+// $info_sources = $odoo_client->get_info_sources();
+// $vehicle_makes = $odoo_client->get_vehicle_makes();
+// $vehicle_colors = $odoo_client->get_vehicle_colors();
+// $years = range(date("Y")-8, date("Y"));
+
 ?>
 
 
@@ -79,18 +81,18 @@ $years = range(date("Y")-8, date("Y"));
                                     </div>
                                     <div class="blue_bg">
                                         <ul>    
-                                            <li><a href="#how_work">How It Works</a></li>
-                                            <li><a href="#earning">Earnings</a></li>
-                                            <li><a href="#step">3 Steps</a></li>
-                                            <li><a href="#contact">Contact Us</a></li>
-                                            <li><a href="">FAQ</a></li> 
+                                            <li><a onclick="closeNav()" href="#how_work">How It Works</a></li>
+                                            <li><a onclick="closeNav()" href="#earning">Earnings</a></li>
+                                            <li><a onclick="closeNav()" href="#step">3 Steps</a></li>
+                                            <li><a onclick="closeNav()" href="#contact">Contact Us</a></li>
+                                            <li><a onclick="closeNav()" href="">FAQ</a></li> 
                                         </ul>
                                     </div>
                                     <div class="white_bg">
                                         <ul> 
-                                            <li><a href="">Terms of Use</a></li>  
-                                            <li><a href="">Disclaimer</a></li>  
-                                            <li><a href="">Privacy Policy</a></li>  
+                                            <li><a onclick="closeNav()" href="">Terms of Use</a></li>  
+                                            <li><a onclick="closeNav()" href="">Disclaimer</a></li>  
+                                            <li><a onclick="closeNav()" href="">Privacy Policy</a></li>  
                                         </ul>
                                     </div>                                                                        
                             </div>  
@@ -114,8 +116,32 @@ $years = range(date("Y")-8, date("Y"));
                         </div>
                     </div>
                 </div>
+            </div>        
+            <section class="footer_modal_area">
+            <div class="container">
+                <div class="row">
+                    <div class="footer_modal">
+                        <div class="simple_logo">
+                            <img src="img/logo.png" alt="">
+                        </div>
+                        <div class="do_quar_text">
+                            <h2>doQar</h2>
+                            <img src="img/star.png">
+                            <p>You Drive. You Earn</p>
+                        </div>
+                        <div class="google_mobdal">
+                            <a href=""><img src="img/google.png" alt=""></a>
+                            <p>Install the App</p>
+                        </div>
+                        <div class="closle_pop">
+                            <p>X</p> 
+                        </div>
+                    </div>
+                </div>
             </div>
-        </header>   
+        </section>
+        </header> 
+
         <section class="banner_area">
             <div class="container">
                 <div class="row">
@@ -173,7 +199,7 @@ $years = range(date("Y")-8, date("Y"));
                                                 </div>
                                             </div>
                                             <div class="single_input_group">
-                                                <select id="ride_sharing_ids" name="ride_sharing_ids" multiple>
+                                                <select id="ride_sharing_ids" id="big_image" name="ride_sharing_ids" multiple>
                                                     <?php foreach ($ride_sharings as $key=>$ride ) :?>
                                                         <option value="<?php echo $ride['id']?>"><?php echo $ride['name']?></option>
                                                     <?php endforeach; ?>

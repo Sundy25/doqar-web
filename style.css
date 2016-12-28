@@ -1548,6 +1548,12 @@ button.close {
   width: 83%;
   margin-top: 6px;
 }
+.single_input_group select#big_image { 
+  background-size: 80px 97%; 
+}
+.single_input_group select#info_source_ids { 
+  background-size: 80px 97%; 
+}
 .single_input_group select {
   background-image: url("img/tik.png");
   background-position: 97% 1px;
@@ -1674,4 +1680,7 @@ option {
 }
 .modal-dialog.modal-content {
   background: rgba(255, 255, 255, 0.85) none repeat scroll 0 0;
+}
+.footer_modal_area {
+  display: none;
 }
