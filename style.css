@@ -1684,3 +1684,34 @@ option {
 .footer_modal_area {
   display: none;
 }
+ #us2{
+  width: 100%;
+  height: 400px; 
+} 
+#big_put > input#us2-radius {
+  display: none;
+}
+#owerner > img {
+  margin-right: 2px;
+  margin-top: 3px;
+  width: 35px;
+}
+.map_button {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.single_input.no_margin {
+  position: relative;
+}
+.single_input_group > select#ride_sharing_ids {
+  background-image: none;
+  width: 100%;
+}
+.single_input_group > select#info_source_ids {
+  background-image: none;
+  width: 100%;
+}
+#map.modal.fade {
+  z-index: 2147483647;
+}

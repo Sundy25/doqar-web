@@ -319,8 +319,12 @@ $years = range(date("Y")-8, date("Y"));
                                                 <div id="small_put" class="single_input">
                                                     <input type="text" name="zip" placeholder="kode pos">
                                                 </div>
-                                                <div id="big_put" class="single_input no_margin">
-                                                    <input type="text" name="home_landmark" placeholder="ALAMAT">
+                                                <div id="big_put" class="single_input no_margin"> 
+                                                    <input type="text" id="us2-radius" name="home_landmark" placeholder="ALAMAT">
+                                                    <input type="text" id="us2-lat" name="home_landmark" placeholder="ALAMAT">
+                                                    <div class="map_button">
+                                                        <a id="owerner" data-toggle="modal" data-target="#map" href=""><img src="img/map.png" alt=""></a>
+                                                    </div>  
                                                     <p>Almat lengkap rumah (optional)</p>
                                                 </div>
                                             </div>  
@@ -329,8 +333,11 @@ $years = range(date("Y")-8, date("Y"));
                                                 <div id="small_put" class="single_input"> 
                                                     <input type="text" name="office_zip" placeholder="kode pos">
                                                 </div>
-                                                <div id="big_put" class="single_input no_margin">
-                                                    <input type="text" name="office_landmark" placeholder="ALAMAT">
+                                                <div id="big_put" class="single_input no_margin"> 
+                                                    <input type="text" id="us2-lon" name="office_landmark" placeholder="ALAMAT">
+                                                    <div class="map_button">
+                                                        <a id="owerner" data-toggle="modal" data-target="#map" href=""><img src="img/map.png" alt=""></a>
+                                                    </div>  
                                                    <p>Alamat lengkap</p>
                                                 </div>
                                             </div> 
@@ -378,8 +385,6 @@ $years = range(date("Y")-8, date("Y"));
                           </div>
                         </div>                        
                     </div>
-
-
                     <div class="hidden_block car_login">
                         <div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                           <div class="modal-dialog modal-content"> 
@@ -421,7 +426,8 @@ $years = range(date("Y")-8, date("Y"));
 
                           </div>
                         </div>                        
-                    </div>
+                    </div> 
+
 
 
 
@@ -828,6 +834,32 @@ $years = range(date("Y")-8, date("Y"));
                 </div>
             </div>
         </footer>
+
+
+
+                    <div class="hidden_block car_login">
+                        <div class="modal fade" id="map" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                          <div class="modal-dialog modal-content"> 
+                              <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                  <span aria-hidden="true">close &times;</span>
+                                </button> 
+                                   <!-- Location: <input type="text" id="us2-address" style="width: 200px"/> -->
+                                    <!-- <input type="text" id="us2-radius"/> -->
+                                    <div id="us2"></div>
+                                    <!-- <input type="text" id="us2-lat"/> -->
+                                    <!-- <input type="text" id="us2-lon"/> -->
+                              </div>
+
+                          </div>
+                        </div>                        
+                    </div>
+
+
+
+
+
+
     
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
@@ -837,8 +869,24 @@ $years = range(date("Y")-8, date("Y"));
         <script src="js/nav.js"></script>
         <script src="js/ui.js"></script>
         <script src="js/ion.rangeSlider.min.js"></script>
+        <script type="text/javascript" src='http://maps.google.com/maps/api/js?sensor=false&libraries=places'></script>
+        <script src="js/locationpicker.jquery.js"></script>
         <script src="js/main.js"></script>
-
+<script>
+    $('#us2').locationpicker({
+        location: {
+            latitude: 46.15242437752303,
+            longitude: 2.7470703125
+        },
+        radius: 50,
+        inputBinding: {
+            latitudeInput: $('#us2-lat'),
+            longitudeInput: $('#us2-lon'),
+            radiusInput: $('#us2-radius'),
+            locationNameInput: $('#us2-address')
+        }
+    });
+</script>
           <script>
              var Wrapify = Wrapify || {};
 
