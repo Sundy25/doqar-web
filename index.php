@@ -1,14 +1,14 @@
 <?php
 
-// include("ripcord-master/ripcord.php");
-// include("odoo-lib.php");
-// $odoo_client = new odoo_client();
-// $odoo_client->back_login();
-// $ride_sharings = $odoo_client->get_ride_sharings();
-// $info_sources = $odoo_client->get_info_sources();
-// $vehicle_makes = $odoo_client->get_vehicle_makes();
-// $vehicle_colors = $odoo_client->get_vehicle_colors();
-// $years = range(date("Y")-8, date("Y"));
+include("ripcord-master/ripcord.php");
+include("odoo-lib.php");
+$odoo_client = new odoo_client();
+$odoo_client->back_login();
+$ride_sharings = $odoo_client->get_ride_sharings();
+$info_sources = $odoo_client->get_info_sources();
+$vehicle_makes = $odoo_client->get_vehicle_makes();
+$vehicle_colors = $odoo_client->get_vehicle_colors();
+$years = range(date("Y")-8, date("Y"));
 
 ?>
 
