@@ -846,15 +846,14 @@ $years = range(date("Y")-8, date("Y"));
                                    <!-- Location: <input type="text" id="us2-address" style="width: 200px"/> -->
                                     <div class="single_input_group"> 
                                         <div id="mar" class="single_input"> 
-                                        <h1>Latitude</h1>
-                                             <input type="text" id="us2-radius"/>
-                                            <input type="text" id="us2-lat"/>
-                                        </div>
-                                        <div id="mar" class="single_input no_margin">
-                                            <h1>Longitude</h1>
-                                            <input type="text" id="us2-lon"/>
-                                        </div>
+                                            <input type="text" id="us2-address"/> 
+
+                                             <input type="hidden" id="us2-radius"/>
+                                            <input type="hidden" id="us2-lat"/>                                            
+                                            <input type="hidden" id="us2-lon"/>
+                                        </div> 
                                     </div> 
+
                                     <div id="us2"></div>
                               </div>
 
