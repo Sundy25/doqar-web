@@ -8,13 +8,20 @@
 
 class odoo_client {
 
-    var $username 	= "admin";
-    var $password 	= "1";
-    var $url 		= "http://127.0.0.1:8010";
-    var $db  		= "doqar";
+    var $username;
+    var $password;
+    var $url;
+    var $db;
     var $uid;
     var $common;
     var $models;
+
+    function __construct($url="http://127.0.0.1:8010", $db="doqar", $username= "admin", $password="1") {
+        $this->url=$url;
+        $this->db=$db;
+        $this->username=$username;
+        $this->password=$password;
+    }
 
     /* login */
     function login( ){

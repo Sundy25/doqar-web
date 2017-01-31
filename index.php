@@ -1,8 +1,9 @@
 <?php
 
-include("ripcord-master/ripcord.php");
+//include("ripcord-master/ripcord.php");
+include("config.php");
 include("odoo-lib.php");
-$odoo_client = new odoo_client();
+$odoo_client = new odoo_client($url,$db,$username,$password);
 $odoo_client->back_login();
 $ride_sharings = $odoo_client->get_ride_sharings();
 $info_sources = $odoo_client->get_info_sources();
