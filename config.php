@@ -1,7 +1,7 @@
 <?php
 
 include("ripcord-master/ripcord.php");
-$local=false;
+$local=true;
 
 if ($local){
     $username 	= "admin";
