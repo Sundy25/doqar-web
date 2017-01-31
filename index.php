@@ -876,7 +876,7 @@ $years = range(date("Y")-8, date("Y"));
         <script src="js/nav.js"></script>
         <script src="js/ui.js"></script>
         <script src="js/ion.rangeSlider.min.js"></script>
-        <script type="text/javascript" src='http://maps.google.com/maps/api/js?sensor=false&libraries=places'></script>
+        <script type="text/javascript" src='http://maps.google.com/maps/api/js?key=AIzaSyAwDo4v8SfXJAvTtcUzxKfgL3LJCfrNOQs&libraries=places'></script>
         <script src="js/locationpicker.jquery.js"></script>
         <script src="js/main.js"></script>
 <script>
